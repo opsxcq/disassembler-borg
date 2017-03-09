@@ -1,0 +1,104 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Borg - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x809 /fo"./dasm.res" /d "_DEBUG" "I:\borgnew\dasm.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP8D.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"./Borg.pch" /YX /Fo"./" /Fd"./" /FD /GZ /c 
+"I:\borgnew\Common.cpp"
+"I:\borgnew\Dasm.cpp"
+"I:\borgnew\Data.cpp"
+"I:\borgnew\database.cpp"
+"I:\borgnew\DEBUG.CPP"
+"I:\borgnew\Decrypt.cpp"
+"I:\borgnew\Disasm.cpp"
+"I:\borgnew\Disio.cpp"
+"I:\borgnew\dlg_ldop.cpp"
+"I:\borgnew\exeload.cpp"
+"I:\borgnew\Gname.cpp"
+"I:\borgnew\help.cpp"
+"I:\borgnew\Mainwind.cpp"
+"I:\borgnew\PROCTAB.CPP"
+"I:\borgnew\Range.cpp"
+"I:\borgnew\registry.cpp"
+"I:\borgnew\RELOCS.CPP"
+"I:\borgnew\SAVEFILE.CPP"
+"I:\borgnew\SCHEDULE.CPP"
+"I:\borgnew\Search.cpp"
+"I:\borgnew\Stack.cpp"
+"I:\borgnew\user_dlg.cpp"
+"I:\borgnew\user_fn.cpp"
+"I:\borgnew\Xref.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP8D.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP8E.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib comctl32.lib /nologo /subsystem:windows /incremental:yes /pdb:"./Borg.pdb" /debug /machine:I386 /out:"./Borg.exe" /pdbtype:sept 
+.\Common.obj
+.\Dasm.obj
+.\Data.obj
+.\database.obj
+.\DEBUG.OBJ
+.\Decrypt.obj
+.\Disasm.obj
+.\Disio.obj
+.\dlg_ldop.obj
+.\exeload.obj
+.\Gname.obj
+.\help.obj
+.\Mainwind.obj
+.\PROCTAB.OBJ
+.\Range.obj
+.\registry.obj
+.\RELOCS.OBJ
+.\SAVEFILE.OBJ
+.\SCHEDULE.OBJ
+.\Search.obj
+.\Stack.obj
+.\user_dlg.obj
+.\user_fn.obj
+.\Xref.obj
+.\dasm.res
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP8E.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+Common.cpp
+Dasm.cpp
+Data.cpp
+database.cpp
+DEBUG.CPP
+Decrypt.cpp
+Disasm.cpp
+Disio.cpp
+dlg_ldop.cpp
+exeload.cpp
+Gname.cpp
+help.cpp
+Mainwind.cpp
+PROCTAB.CPP
+Range.cpp
+registry.cpp
+RELOCS.CPP
+SAVEFILE.CPP
+SCHEDULE.CPP
+Search.cpp
+Stack.cpp
+user_dlg.cpp
+user_fn.cpp
+Xref.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+Borg.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

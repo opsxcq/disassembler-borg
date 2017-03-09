@@ -1,0 +1,82 @@
+Hi Mark,
+
+I've been a bit quiet over Xmas/New Year, but haven't forgotten the comments.
+
+//I have built beta 13, the only build errors I found were to do with repeated
+//definitions of "repeater" in Exports.cpp, Imports.cpp, Names.cpp and
+//Xref.cpp, solution was to make all but one extern. The problem was there in
+//earlier builds, but I forgot that I had done the modification.
+
+Now moved into the class definitions. Build 15.
+
+As part of the build VC++ issued a number of warnings, most were for unknown
+pragma, however the following additional warnings may be of interest
+
+//Disasm.cpp(43) : warning C4018: '!=' : signed/unsigned mismatch
+
+procnames.num changed to a dword.
+
+//Disasm.cpp(134) : warning C4018: '<' : signed/unsigned mismatch
+
+loop counter now unsigned.
+
+//Disasm.cpp(281) : warning C4018: '>' : signed/unsigned mismatch
+//Disasm.cpp(337) : warning C4018: '>' : signed/unsigned mismatch
+
+i now unsigned
+
+//Disasm.cpp(1236) : warning C4244: '=' : conversion from 'unsigned short' to
+//'unsigned char', possible loss of data
+//Disasm.cpp(1249) : warning C4244: '=' : conversion from 'unsigned short' to
+//'unsigned char', possible loss of data
+//Disasm.cpp(1262) : warning C4244: '=' : conversion from 'unsigned short' to
+//'unsigned char', possible loss of data
+
+rm is now a word.
+
+//Disasm.cpp(1643) : warning C4146: unary minus operator applied to unsigned
+//type, result still unsigned
+//Disasm.cpp(1675) : warning C4146: unary minus operator applied to unsigned
+//type, result still unsigned
+
+0 added at the start to change the unary minus into a binary minus. Should work ok.
+
+//Disasm.cpp(1814) : warning C4018: '<=' : signed/unsigned mismatch
+//Disasm.cpp(1854) : warning C4018: '<=' : signed/unsigned mismatch
+
+usersel changed to a UINT
+
+//Fileload.cpp(231) : warning C4018: '<' : signed/unsigned mismatch
+//Fileload.cpp(273) : warning C4018: '<' : signed/unsigned mismatch
+//Fileload.cpp(494) : warning C4018: '<' : signed/unsigned mismatch
+//Fileload.cpp(503) : warning C4018: '<' : signed/unsigned mismatch
+//Fileload.cpp(597) : warning C4018: '<' : signed/unsigned mismatch
+//Fileload.cpp(833) : warning C4018: '==' : signed/unsigned mismatch
+
+changed 'j' to a dword. procnames.num already changed.
+
+//Mainwind.cpp(73) : warning C4018: '<' : signed/unsigned mismatch
+//Mainwind.cpp(144) : warning C4018: '<' : signed/unsigned mismatch
+
+lastline changed to UINT.
+
+Of course I could have introduced more signed/unsigned mismatchs with some of these
+changes...
+
+//A further idea which may improve application closure would be to define some
+//global variable or an static variable for each list, which the ~slist
+//function would check. If clear then process as now, if set then skip the
+//delete functions. If the variable was initialised to 0 and then set to a non
+//zero value as the last action in WinMain before exiting, the application
+//would not have to process all the deletes and could instead let the OS free
+//memory.
+
+I'm not sure whether the problem seems to stem from thread priorities at times.
+I'll keep this in mind, unless you want to come up with some code...
+
+I'll update the build on the web site later in the week with these changes. 
+
+Cronos.
+
+
+

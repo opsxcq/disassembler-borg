@@ -1,0 +1,713 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+main_menu MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open New File",              file_open
+        MENUITEM SEPARATOR
+        MENUITEM "Load Database",               load_database
+        MENUITEM "Save As Database",            save_database, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Save As Text",               file_save, GRAYED
+        MENUITEM "Save as &Asm",                save_asm, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       file_exit
+    END
+    POPUP "&Search"
+    BEGIN
+        MENUITEM "&Main Search Engine",         main_search, GRAYED
+        MENUITEM "&Search Again",               search_again, GRAYED
+    END
+    POPUP "&Current Line"
+    BEGIN
+        MENUITEM "Make into &Code",             make_code, GRAYED
+        POPUP "Make into &Data"
+        BEGIN
+            MENUITEM "&Dword",                      make_dword, GRAYED
+            MENUITEM "&Word",                       make_word, GRAYED
+            POPUP "&String"
+            BEGIN
+                MENUITEM "&C Style (ends zero)",        make_string, GRAYED
+                MENUITEM "&Pascal Style (length+string)", pascal_string
+                , GRAYED
+                MENUITEM "&Unicode C Style",            uc_string, GRAYED
+                MENUITEM "Unicode Pascal Style",        up_string, GRAYED
+                MENUITEM "&DOS Style (ends $)",         dos_string, GRAYED
+                MENUITEM "&General String (printable chars)", general_string
+                , GRAYED
+            END
+            POPUP "&Floating Point"
+            BEGIN
+                MENUITEM "&Single Real",                float_single, GRAYED
+                MENUITEM "&Double Real",                float_double, GRAYED
+                MENUITEM "&Long Double",                float_longdouble
+                , GRAYED
+            END
+        END
+        POPUP "&Undefine"
+        BEGIN
+            MENUITEM "&This Line",                  undefine_line, GRAYED
+            MENUITEM "&Next 10 Lines",              undefine_lines, GRAYED
+            MENUITEM "&Until gap/xref/comment",     undefine_lines_long
+            , GRAYED
+        END
+        MENUITEM "&Name",                       Name_Location, GRAYED
+        POPUP "&Argument Override"
+        BEGIN
+            MENUITEM "&Decimal",                    argover_dec, GRAYED
+            MENUITEM "&Hex",                        argover_hex, GRAYED
+            MENUITEM "&Char",                       argover_char, GRAYED
+            POPUP "&Offset"
+            BEGIN
+                MENUITEM "&Dseg",                       offset_dseg, GRAYED
+            END
+            MENUITEM "&Single Real",                arg_single, GRAYED
+            MENUITEM "&Negate Immediate",           argnegate, GRAYED
+        END
+        MENUITEM "&Enter Comment",              get_comment, GRAYED
+    END
+    POPUP "&Block"
+    BEGIN
+        MENUITEM "Mark &Top",                   block_top, GRAYED
+        MENUITEM "Mark &Bottom",                block_bottom, GRAYED
+        MENUITEM "&View Extents",               block_view, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Undefine",                   block_undefine, GRAYED
+        MENUITEM "Save as &Asm",                block_saveasm, GRAYED
+        MENUITEM "&Save as Text",               block_savetext, GRAYED
+        MENUITEM "&Decrypt",                    cm_decrypt, GRAYED
+    END
+    POPUP "&Jumps and Calls"
+    BEGIN
+        MENUITEM "Follow &Jump/Call/Arg Address", line_jumpto, GRAYED
+        MENUITEM "Ju&mp To Address (other arg)", line_jumptoarg2, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Jump Back/&Return",           Jump_Back, GRAYED
+        MENUITEM "Jump &To [Entered Address]",  jump_to, GRAYED
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Segments",                   view_segment, GRAYED
+        MENUITEM "&Names",                      view_names, GRAYED
+        MENUITEM "&Xrefs",                      view_xrefs, GRAYED
+        MENUITEM "&Imports",                    view_imports, GRAYED
+        MENUITEM "&Exports",                    view_exports, GRAYED
+    END
+    POPUP "&Other"
+    BEGIN
+        POPUP "&Display Options"
+        BEGIN
+            POPUP "&Font"
+            BEGIN
+                MENUITEM "&ANSI_FIXED_FONT",            font_ansi
+                MENUITEM "&SYSTEM_FIXED_FONT",          font_system
+                MENUITEM "&Courier Font[8]",            font_courier
+                MENUITEM "Courier Font[10]",            font_courier10
+                MENUITEM "Courier Font[12]",            font_courier12
+            END
+            POPUP "&Colours"
+            BEGIN
+                MENUITEM "Set &Text Colour",            set_text_color
+                MENUITEM "Set &Highlight Colour",       set_high_color
+                MENUITEM "Set &Background Colour",      set_bg_color
+            END
+        END
+        MENUITEM "&Change Program OEP",         change_oep, GRAYED
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Shortcuts",                  help_short
+        MENUITEM "&About",                      help_about
+    END
+END
+
+right_click_menu MENU DISCARDABLE 
+BEGIN
+    POPUP "Borg"
+    BEGIN
+        POPUP "&Block"
+        BEGIN
+            MENUITEM "Mark &Top",                   block_top, GRAYED
+            MENUITEM "Mark &Bottom",                block_bottom, GRAYED
+        END
+        MENUITEM "Make into &Code",             make_code, GRAYED
+        POPUP "Make into &Data"
+        BEGIN
+            MENUITEM "&Dword",                      make_dword, GRAYED
+            MENUITEM "&Word",                       make_word, GRAYED
+            POPUP "&String"
+            BEGIN
+                MENUITEM "&C Style",                    make_string, GRAYED
+                MENUITEM "&Pascal Style",               pascal_string
+                , GRAYED
+                MENUITEM "&Unicode C Style",            uc_string, GRAYED
+                MENUITEM "Unicode Pascal Style",        up_string, GRAYED
+                MENUITEM "&DOS Style (ends $)",         dos_string, GRAYED
+                MENUITEM "&General String (printable chars)", general_string
+                , GRAYED
+            END
+            POPUP "&Floating Point"
+            BEGIN
+                MENUITEM "&Single Real",                float_single, GRAYED
+                MENUITEM "&Double Real",                float_double, GRAYED
+                MENUITEM "&Long Double",                float_longdouble
+                , GRAYED
+            END
+        END
+        POPUP "&Undefine"
+        BEGIN
+            MENUITEM "&This Line",                  undefine_line, GRAYED
+            MENUITEM "&Next 10 Lines",              undefine_lines, GRAYED
+            MENUITEM "&Until gap/lines/comment",    undefine_lines_long
+            , GRAYED
+        END
+        MENUITEM "&Jump To Address",            line_jumpto, GRAYED
+        MENUITEM "&Name",                       Name_Location, GRAYED
+        MENUITEM "&View Xrefs",                 view_xrefs, GRAYED
+        POPUP "&Argument Override"
+        BEGIN
+            MENUITEM "&Decimal",                    argover_dec, GRAYED
+            MENUITEM "&Hex",                        argover_hex, GRAYED
+            MENUITEM "&Char",                       argover_char, GRAYED
+            POPUP "&Offset"
+            BEGIN
+                MENUITEM "&Dseg",                       offset_dseg, GRAYED
+            END
+            MENUITEM "&Single Real",                arg_single, GRAYED
+            MENUITEM "&Negate Immediate",           argnegate, GRAYED
+        END
+        MENUITEM "&Enter Comment",              get_comment, GRAYED
+    END
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION 2,0,0,0
+ PRODUCTVERSION 2,0,0,0
+ FILEFLAGSMASK 0x0L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Cronos\0"
+            VALUE "FileDescription", "Borg Disassembler\0"
+            VALUE "FileVersion", "2.28\0"
+            VALUE "InternalName", "Borg\0"
+            VALUE "LegalCopyright", "Freeware - by Cronos\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Borg.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "\0"
+            VALUE "ProductVersion", "\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+DASM_ICON               ICON    DISCARDABLE     "dasm.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+D_help_about DIALOG DISCARDABLE  28, 15, 240, 120
+STYLE WS_POPUP | WS_DLGFRAME
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDC_BUTTON1,96,93,48,12
+    CTEXT           "Borg Disassembler",-1,76,17,88,9
+    CTEXT           "Written By",-1,98,30,44,9
+    CTEXT           "CRONOS",-1,76,43,88,9
+    ICON            "dasm_icon",-1,12,17,18,20
+    PUSHBUTTON      "http://www.cronos.cc/",idc_website,78,72,84,12,
+                    BS_CENTER | BS_FLAT | NOT WS_TABSTOP
+    PUSHBUTTON      "Email:Cronos@ntlworld.com",idc_email,70,56,100,13,
+                    BS_CENTER | BS_FLAT | NOT WS_TABSTOP
+END
+
+D_checktype DIALOG DISCARDABLE  9, 21, 281, 157
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_DLGMODALFRAME
+CAPTION "Borg Disassembler - File Open Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,139,138,50,14
+    GROUPBOX        "Open As",IDC_GROUPBOX1,5,7,115,51
+    CONTROL         "PE Executable",IDC_DEFAULTBUTTON,"Button",
+                    BS_AUTORADIOBUTTON | BS_LEFTTEXT | WS_GROUP,19,16,77,12
+    CONTROL         "DOS Executable",IDC_DOSBUTTON,"Button",
+                    BS_AUTORADIOBUTTON | BS_LEFTTEXT,19,30,77,12
+    CONTROL         "Binary File",IDC_BINBUTTON,"Button",BS_AUTORADIOBUTTON | 
+                    BS_LEFTTEXT,19,44,77,12
+    GROUPBOX        "Options",IDC_GROUPBOX2,6,63,115,87
+    CONTROL         "(PE)Load Resources",IDC_LOADRESOURCES,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,15,74,89,12
+    CONTROL         "(PE)Load Debug Obj.",load_debug,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,15,86,89,12
+    CONTROL         "(PE)Load Data",IDC_LOADDATA,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_TABSTOP,15,98,89,12
+    CONTROL         "8/16-bit Disassembly",IDC_16DASM,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,15,110,89,12
+    CONTROL         "32-bit Disassembly",IDC_32DASM,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_TABSTOP,15,122,89,12
+    CONTROL         "Demangle Import Names",demangle_names,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,15,134,89,12
+    EDITTEXT        IDC_SEGEDIT,240,12,37,10
+    EDITTEXT        IDC_OFFSEDIT,240,26,37,10
+    LTEXT           "Load Offset (Binary File)",-1,135,26,95,10
+    LTEXT           "Load Segment (Binary/DOS)",-1,135,12,95,10
+    LISTBOX         IDC_LISTBOX1,135,50,141,74,WS_VSCROLL
+    PUSHBUTTON      "Help",IDC_HELPBUTTON1,217,138,50,14
+    PUSHBUTTON      "Code Options",more_options,139,119,50,14
+END
+
+HELPDIALOG_1 DIALOG DISCARDABLE  18, 40, 288, 111
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_DLGMODALFRAME
+CAPTION "Borg Disassembler - File Open Options Help"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,119,87,50,14
+    LTEXT           "Open As:Choose the file type. Best guess is already selected.",
+                    -1,5,5,278,11
+    LTEXT           "Options:8/16 bit Disassembly forces Borg into 16-bit mode.",
+                    -1,5,16,278,11
+    LTEXT           "Options:32-bit Disassembly forces Borg into 32 bit mode.",
+                    -1,5,27,278,11
+    LTEXT           "Loading of Resources and Data objects in PE files can be disabled.",
+                    -1,5,38,278,11
+    LTEXT           "Options:Rename DLL Entries - Borg will normally try to rename DLL imports",
+                    -1,5,49,278,11
+    LTEXT           "  imports as best it can. You can stop Borg from trying to demangle DLL names.",
+                    -1,5,60,278,11
+    LTEXT           "The loading segment can be changed for DOS/Binary files and offset for Binary files.",
+                    -1,5,71,278,11
+END
+
+Borg_Shutdown DIALOG DISCARDABLE  72, 45, 80, 15
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_DLGFRAME
+FONT 12, "MS Sans Serif"
+BEGIN
+    CTEXT           "Borg Shutdown",-1,7,3,65,9
+END
+
+Seg_Viewer DIALOG DISCARDABLE  37, 35, 240, 155
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_DLGMODALFRAME
+CAPTION "Segment Viewer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_SEGLISTBOX,3,21,84,122,WS_VSCROLL
+    LTEXT           "Select Segment",-1,6,4,60,12
+    LTEXT           "Start:",-1,102,17,43,13
+    LTEXT           "End:",-1,102,29,43,13
+    LTEXT           "Size:",-1,102,41,43,13
+    LTEXT           "Type:",-1,102,53,43,13
+    LTEXT           "Text",SEG_TEXTSTART,156,17,71,13
+    LTEXT           "Text",SEG_TEXTEND,156,29,70,13
+    LTEXT           "Text",SEG_TEXTSIZE,156,41,70,13
+    LTEXT           "Text",SEG_TEXTTYPE,156,53,72,13
+    LTEXT           "Text",IDC_SEGNAMETEXT,102,65,127,20
+    GROUPBOX        "Segment Properties",IDC_GROUPBOX3,95,6,140,85
+    PUSHBUTTON      "OK",IDC_OKBUTTON,146,125,36,13
+    PUSHBUTTON      "Jump To",IDC_JUMPTOBUTTON,146,99,36,13
+END
+
+help_shortcuts DIALOG DISCARDABLE  15, 113, 344, 129
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_DLGMODALFRAME
+CAPTION "Borg Help Shortcut Summary"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,147,108,50,14
+    LTEXT           "disassembles from current line if possible\nundefine the current line\nundefine the next 10 lines\njump to address\nmake into dword\nmake into word\nmake into string (C style)\nmake into string (Pascal style)\nName Location\nSearch (again)",
+                    -1,31,22,136,82
+    CTEXT           "Shortcut Keys Summary",-1,130,6,83,10,WS_BORDER
+    LTEXT           "c:\nu:\nU:\nEnter:\nd:\nw:\ns:\np:\nn:\nF3:",-1,5,22,25,
+                    82
+    LTEXT           "Esc:\nF1:\nH:\nD:\nC:\no:\n;:\n-:\nt:\nb:",-1,181,22,25,
+                    82
+    LTEXT           "Return using Call Stack\nThis Summary\nHex Argument\nDec Argument\nChar Argument\nOffset (Dseg)\nEnter Comment\nNegate Immediate\nMark Top of Block\nMark Bottom of Block",
+                    -1,213,22,126,82
+END
+
+Names_Viewer DIALOG DISCARDABLE  56, 42, 250, 181
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Names Viewer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_NAMESLISTBOX,9,21,121,147,WS_VSCROLL
+    LTEXT           "Select Name",-1,6,4,60,12
+    LTEXT           "Segment:",-1,142,21,43,13
+    LTEXT           "Offset:",-1,142,33,43,13
+    LTEXT           "Text",NAMES_TEXTSTART,196,21,43,13
+    LTEXT           "Text",NAMES_TEXTEND,196,33,43,13
+    GROUPBOX        "Name Properties",IDC_GROUPBOX3,139,6,101,46
+    PUSHBUTTON      "OK",IDC_OKBUTTON,172,138,36,13
+    PUSHBUTTON      "Jump To",IDC_JUMPTOBUTTON,172,115,36,13
+    PUSHBUTTON      "Rename",NAMES_RENAME,172,69,36,13
+    PUSHBUTTON      "Delete",NAMES_DELETE,172,92,36,13
+END
+
+Get_Name DIALOG DISCARDABLE  39, 55, 141, 60
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_DLGMODALFRAME
+CAPTION "Name Location"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,6,42,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,84,42,50,14
+    EDITTEXT        IDC_NAMEEDIT,14,21,117,13
+    LTEXT           "Type the Name Below",-1,7,8,103,11
+END
+
+Xrefs_Viewer DIALOG DISCARDABLE  15, 42, 198, 190
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Xrefs Viewer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_XREFSLISTBOX,9,21,121,156,WS_VSCROLL
+    LTEXT           "Select Xref",-1,6,4,60,12
+    PUSHBUTTON      "OK",IDC_OKBUTTON,146,106,36,13
+    PUSHBUTTON      "Jump To",IDC_JUMPTOBUTTON,146,83,36,13
+    PUSHBUTTON      "Delete",XREFS_DELETE,146,60,36,13
+END
+
+Imports_Viewer DIALOG DISCARDABLE  56, 42, 250, 172
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Imports Viewer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_IMPORTSLISTBOX,9,21,121,137,WS_VSCROLL
+    LTEXT           "Select Import",-1,6,4,60,12
+    LTEXT           "Segment:",-1,142,21,43,13
+    LTEXT           "Offset:",-1,142,33,43,13
+    LTEXT           "Text",IMPORTS_TEXTSTART,196,21,43,13
+    LTEXT           "Text",IMPORTS_TEXTEND,196,33,43,13
+    GROUPBOX        "Import Properties",IDC_GROUPBOX3,139,6,101,46
+    PUSHBUTTON      "OK",IDC_OKBUTTON,170,66,36,13
+END
+
+Exports_Viewer DIALOG DISCARDABLE  56, 42, 250, 160
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Exports Viewer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_EXPORTSLISTBOX,9,21,121,127,WS_VSCROLL
+    LTEXT           "Select Export",-1,6,4,60,12
+    LTEXT           "Segment:",-1,142,21,43,13
+    LTEXT           "Offset:",-1,142,33,43,13
+    LTEXT           "Text",EXPORTS_TEXTSTART,196,21,43,13
+    LTEXT           "Text",EXPORTS_TEXTEND,196,33,43,13
+    GROUPBOX        "Export Properties",IDC_GROUPBOX3,139,6,101,46
+    PUSHBUTTON      "OK",IDC_OKBUTTON,171,99,36,13
+    PUSHBUTTON      "Jump To",IDC_JUMPTOBUTTON,171,73,36,13
+END
+
+Search_Dialog DIALOGEX 93, 77, 234, 148
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_DLGMODALFRAME
+CAPTION "Search"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,49,123,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,135,123,50,14
+    LTEXT           "Enter search string or sequence of bytes(no spaces) or number",
+                    -1,14,10,206,14
+    EDITTEXT        search_edit,15,27,204,13
+    GROUPBOX        "Options",IDC_GROUPBOX4,11,49,211,38
+    CONTROL         "String",search_string,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,29,56,75,14
+    CONTROL         "Bytes",search_bytes,"Button",BS_AUTORADIOBUTTON,29,71,
+                    71,13
+    CONTROL         "Hex Number",search_hex,"Button",BS_AUTORADIOBUTTON,134,
+                    56,80,14
+    CONTROL         "Decimal Number",search_decimal,"Button",
+                    BS_AUTORADIOBUTTON,134,71,83,13
+    CONTROL         "From Start",search_fromstart,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,44,99,71,13
+    CONTROL         "From Current Line",search_fromcurr,"Button",
+                    BS_AUTORADIOBUTTON,119,99,83,13
+END
+
+S_Box DIALOG DISCARDABLE  87, 92, 48, 16
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_DLGFRAME
+FONT 10, "MS Sans Serif"
+BEGIN
+    CTEXT           "Searching...",-1,3,3,41,10
+END
+
+Advanced_Options DIALOG DISCARDABLE  87, 51, 194, 119
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_DLGMODALFRAME
+CAPTION "Advanced Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,72,96,50,14
+    CONTROL         "Detect push (e)bp, mov (e)bp,(e)sp as code",
+                    advanced_pushbp,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,
+                    4,171,12
+    CONTROL         "Detect Enter xx,00 as code",advanced_enter,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,8,41,171,12
+    CONTROL         "Detect mov bx,sp as code",advanced_movbx,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,8,54,171,12
+    CONTROL         "Aggressive Code Analysis in Code Segments",
+                    advanced_aggressive,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,8,68,171,12
+    CONTROL         "Detect push (e)bp, mov (e)ax,[(e)sp+xxh] as code",
+                    advanced_eaxfromesp,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,8,17,171,12
+    CONTROL         "Detect mov (e)ax,[(e)sp+xxh] as code",advanced_moveax,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,29,171,12
+END
+
+load_box DIALOG DISCARDABLE  87, 92, 48, 16
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_DLGFRAME
+FONT 10, "MS Sans Serif"
+BEGIN
+    CTEXT           "Loading...",-1,3,3,41,10
+END
+
+save_box DIALOG DISCARDABLE  87, 92, 48, 16
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_DLGFRAME
+FONT 10, "MS Sans Serif"
+BEGIN
+    CTEXT           "Saving...",-1,3,3,41,10
+END
+
+Comment_Editor DIALOG DISCARDABLE  0, 0, 240, 42
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_DLGMODALFRAME
+CAPTION "Comment Editor"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,39,20,50,14,BS_CENTER
+    PUSHBUTTON      "Cancel",IDCANCEL,151,20,50,14,BS_CENTER
+    EDITTEXT        IDC_COMMENTEDIT,4,4,232,12,ES_NOHIDESEL
+END
+
+Block_Dialog DIALOG DISCARDABLE  0, 0, 150, 91
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_DLGMODALFRAME
+CAPTION "Block Bounds"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,50,68,50,14,BS_CENTER
+    LTEXT           "Text",Text_Top,77,8,68,13,NOT WS_GROUP
+    LTEXT           "Text",Text_Bottom,77,28,68,14,NOT WS_GROUP
+    LTEXT           "Text",Text_Status,5,51,140,13,NOT WS_GROUP
+    LTEXT           "Block Top",-1,5,8,52,8,NOT WS_GROUP
+    LTEXT           "Block Bottom",-1,5,28,56,8,NOT WS_GROUP
+END
+
+Decrypt_Dialog DIALOG DISCARDABLE  0, 0, 239, 119
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_DLGMODALFRAME
+CAPTION "Decryptor Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,177,6,50,14,BS_CENTER
+    PUSHBUTTON      "Cancel",IDCANCEL,177,24,50,14,BS_CENTER
+    GROUPBOX        "Type",IDC_GROUPBOX5,93,3,69,71,WS_GROUP
+    CONTROL         "Byte",idc_byte,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,102,12,48,9
+    CONTROL         "Word",idc_word,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,
+                    102,27,48,9
+    CONTROL         "Dword",idc_dword,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,102,42,53,9
+    CONTROL         "Array",idc_array,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,102,58,51,9
+    GROUPBOX        "Decryptor",IDC_GROUPBOX6,6,3,77,96,WS_GROUP
+    CONTROL         "XOR",idc_xor,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,15,12,60,9
+    CONTROL         "ADD",idc_add,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,
+                    15,26,60,9
+    CONTROL         "SUB",idc_sub,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,
+                    15,40,60,9
+    CONTROL         "MUL",idc_mul,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,
+                    15,54,60,9
+    CONTROL         "Rotate Left",idc_rot,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,15,68,60,9
+    CONTROL         "XADD",idc_xadd,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,
+                    15,84,60,9
+    CONTROL         "Patch Exe",idc_applytoexe,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,171,45,60,12
+    EDITTEXT        idc_value,153,81,53,12
+    LTEXT           "Value (Hex):",-1,93,81,51,10,NOT WS_GROUP
+    LTEXT           "Array Segment:",-1,9,105,54,9,NOT WS_GROUP
+    EDITTEXT        idc_arrayseg,66,102,45,12
+    EDITTEXT        idc_arrayoffset,171,102,51,12
+    LTEXT           "Array Offset:",-1,120,105,48,9,NOT WS_GROUP
+END
+
+Jaddr_Editor DIALOG DISCARDABLE  0, 0, 151, 46
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Jump To....... (offset in Hex)"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,19,26,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,79,26,50,14
+    EDITTEXT        IDC_JADDREDIT,68,8,72,12,ES_AUTOHSCROLL
+    LTEXT           "Enter Address",IDC_STATIC,8,8,53,13,SS_CENTERIMAGE
+END
+
+OEP_Editor DIALOG DISCARDABLE  0, 0, 151, 62
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Change OEP"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,18,39,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,83,39,50,14
+    LTEXT           "New OEP (hex)",IDC_STATIC,7,7,59,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_OEPEDIT,75,7,66,12,ES_AUTOHSCROLL
+    CONTROL         "Patch Executable with new OEP",IDC_PATCHOEP,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,7,23,120,14
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    Jaddr_Editor, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 146
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 43
+    END
+
+    OEP_Editor, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 148
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 59
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FILTERSTRING        "All Files(*.*)|*.*|Exe Files (*.exe)|*.exe|Dll Files(*.dll)|*.dll|Com Files (*.com)|*.com||"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FILTERSAVE          "All Files (*.*)|*.*||"
+END
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

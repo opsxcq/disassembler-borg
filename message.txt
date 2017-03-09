@@ -1,0 +1,60 @@
+Mark,
+
+Thanks for the e-mail and the comments. I've made a couple of changes which will be in the next version, see comments below.
+
+On the changes for compiling under VC++:
+It would be good to have a list of the changes, and the compiler variable which identifies VC++ so that I could add something like
+#ifdef MS_VC // or whatever it uses
+    wsprintf(etc);
+#else
+    wvsprintf(etc);
+#endif
+
+I'll put the next set of sources up this weekend, but if I get these in then it would help you recompile the next version (which mainly contains a source change from word segm, dword offs to lptr loc and a small class for the lptr loc with meaningful (in the context) comparisons,etc and a lot of simplification of code.
+
+Debugging is difficult in Borland (debugger won't run win32 apps), so it's useful to have the feedback,
+
+Thanks
+Cronos
+
+Cronos
+In porting beta10 to VC++ I believe have found a couple of memory bugs, both are in
+names::addname, the problems may occur elsewhere aswell.
+
+1) at the end of the function there is a test
+   if (!strlen(newname->name)) return;
+
+this leaves newname and newname->name as unreferenced memory i.e. a memory leak
+// Yes, you're quite right.
+// -added delete newname->name; delete newname; here.
+
+2) the code
+  addto((listitem)newname);
+  dsm.discomment(segm,offs,dsmnameloc,(byte *)newname->name);
+
+puts name on two lists, at the end of the program the delete functions for the lists both try to
+release the memory, this could lead to win95 GPFs, debugging with VC++ certainly flagged problems on exit.
+// yes, this seems to be right too.
+// -have added 'and !=dsmnameloc in the dsm deletion function too, before deleting tptr item.
+
+A oddity in your code, which may be a bug (I haven't had time to check) is in fileloader::readsysfile,
+you use offsets into fbuff of 0, 3 & 4. Given that fbuff appears to be a byte array these offsets don't seem right.
+// fbuff is cast to a (word *) - careful bracketing !
+
+A few extra points on the port
+
+a) you use wvsprintf, VC++ complains since it cannot safely cast the va_list arg, the solution I used was to
+use wsprintf instead and remove the & prefixes to the arguments.
+// yes, i've had some trouble with wvsprintf in Borland, but it seems to work in Borland now.
+
+b) VC++ complained about dasm.rc because there was no windows.h include file also there is an extra
+comma on the save_database line.
+// Borland doesn't complain.
+
+Hope the input is useful
+
+regards
+Mark Ogden
+
+PS. Have you considered using Mapping to load the files rather than reading into a buffer?
+// Please explain further !

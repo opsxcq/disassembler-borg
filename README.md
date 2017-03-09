@@ -1,6 +1,6 @@
 # Borg 2.28
 
-Borg is an old school disassembler by Cronos (cronos@ntlworld.com)
+Borg is an old school disassembler by Cronos (cronos@ntlworld.com), the original version can be found [here](http://www.caesum.com/files/borg228.zip), but this is just a copy to preserve this amazing project.
 
 There are some notes at the bottom of this file (just tend to be working notes from which I add and delete stuff and generally take absolutely no notice of it ;)) which summarise the list of things to be done yet, and any current bugs. Basically if it's on this list then it isn't implemented yet!  Suggestions for change are also welcome, in fact I would appreciate just receiving an email with your top ten list of things you would like to see changed in Borg. If you are reporting problems back it would be useful to know as much about any problems as possible :-
 
